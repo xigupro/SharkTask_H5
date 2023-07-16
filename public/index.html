@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,viewport-fit=cover">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <% if (NODE_ENV === 'production') { %>
+      <!-- 生产环境 -->
+      <script>document.write('<script src="./config/prod.config.js?t=' + new Date().getTime() + '"><\/script>');</script>
+    <% }else if (NODE_ENV === 'test') { %>
+      <!-- 测试环境 -->
+      <script>document.write('<script src="./config/test.config.js?t=' + new Date().getTime() + '"><\/script>');</script>
+    <% }else if (NODE_ENV === 'pre') { %>
+      <!-- 售前环境 -->
+      <script>document.write('<script src="./config/pre.config.js?t=' + new Date().getTime() + '"><\/script>');</script>
+    <% }else { %>
+      <!-- 开发环境 -->
+      <script>document.write('<script src="./config/dev.config.js?t=' + new Date().getTime() + '"><\/script>');</script>
+    <% } %>
+    <title></title>
+    <script src="plugins/wechat/jweixin-1.1.0.js"></script>
+    <script src="./debug/GenerateTestUserSig.js"></script>
+    <script src="./debug/lib-generate-test-usersig.min.js"></script>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but vant_starter doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+    <script>
+      document.addEventListener('plusready', function () {
+        var webview = plus.webview.currentWebview();
+        plus.key.addEventListener('backbutton', function () {
+          const top = plus.webview.getTopWebview();
+          console.info('webviewid'+webview.id+','+top.id);
+          if (top.id === webview.id) {
+            webview.canBack(function (e) {
+              console.info('主webview'+e.canBack);
+              if (e.canBack) {
+                webview.back();
+              } else {
+                webview.close();
+              }
+            });
+          }
+        });
+      });
+    </script>
+    <script>
+      window._AMapSecurityConfig = {
+        securityJsCode: window.API_CONFIG['amap_secret'],
+      }
+    </script>
+    <!-- <script src="./plugins/vconsole/vconsole.min.js"></script>
+    <script>
+      var vConsole = new VConsole();
+    </script> -->
+  </body>
+</html>

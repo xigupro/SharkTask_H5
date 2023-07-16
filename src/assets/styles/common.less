@@ -1,0 +1,119 @@
+html {
+  background-color: @background-color;
+}
+body {
+  color: #333;
+  font-size: 14px;
+  font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+}
+.clear {
+  clear: both;
+  display: table;
+  content: '';
+}
+.pull-left {
+  float: left;
+}
+.pull-right {
+  float: right;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex-1 {
+  flex: 1;
+}
+// 顶部导航栏
+.van-nav-bar {
+  height: 44px!important;
+  line-height: 44px!important;
+  
+  .van-nav-bar__title{
+    font-size: 18px;
+  }
+  .van-nav-bar__arrow{
+    font-size: 20px;
+  }
+}
+// 未读状态的红点
+.unread-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #F1403C;
+  position: absolute;
+  border-radius: 50%;
+}
+// 未读消息数
+.unread-count {
+  display: inline-block!important;
+  min-width: 16px;
+  // height: 15px;
+  line-height: 1;
+  top: 4px;
+  right: 4px;
+  text-align: center;
+  font-size: 12px;
+  color: #fff;
+  background-color: #F1403C;
+  position: absolute;
+  border-radius: 50px;
+  padding: 2px 3px;
+}
+
+// 圆形渐变背景，需组合颜色样式使用
+.circle-icon {
+  width:32px;
+  height:32px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  color: #fff;
+  text-align: center;
+  line-height: 32px;
+  .iconfont {
+    font-size: 22px;
+  }
+  &.blue-linear {
+    background:linear-gradient(135deg,rgba(38,170,252,1) 0%,rgba(0,132,255,1) 100%);
+  }
+  &.yellow-linear {
+    background:linear-gradient(145deg,rgba(255,185,26,1) 0%,rgba(255,171,43,1) 100%);
+  }
+  &.green-linear {
+    background:linear-gradient(140deg,rgba(133,220,80,1) 0%,rgba(95,200,59,1) 100%);
+  }
+  &.purple-linear {
+    background:linear-gradient(148deg,rgba(138,120,250,1) 0%,rgba(113,91,248,1) 100%);
+  }
+}
+
+// 1像素底部边框
+.border-bottom-gray::after {
+  position: absolute;
+  box-sizing: border-box;
+  content: ' ';
+  pointer-events: none;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid #ebedf0;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+// 正方形
+.square(@wh, @br: 0) {
+  width: @wh;
+  height: @wh;
+  border-radius: @br;
+}
+
+.textOverflow{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

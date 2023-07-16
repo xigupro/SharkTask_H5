@@ -1,0 +1,5 @@
+build/*.js
+public/*.js
+src/store/modules/im/
+src/components/im/
+src/views/sign/

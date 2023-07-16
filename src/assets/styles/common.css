@@ -1,0 +1,99 @@
+body {
+  color: #333;
+  font-size: 14px;
+  font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+}
+.clear {
+  clear: both;
+  display: table;
+  content: '';
+}
+.pull-left {
+  float: left;
+}
+.pull-right {
+  float: right;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex-1 {
+  flex: 1;
+}
+.van-nav-bar {
+  height: 44px!important;
+  line-height: 44px!important;
+}
+.van-nav-bar .van-nav-bar__title {
+  font-size: 18px;
+}
+.van-nav-bar .van-nav-bar__arrow {
+  font-size: 20px;
+}
+.unread-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #F1403C;
+  position: absolute;
+  border-radius: 50%;
+}
+.unread-count {
+  display: inline-block !important;
+  min-width: 16px;
+  line-height: 1;
+  top: 4px;
+  right: 4px;
+  text-align: center;
+  font-size: 12px;
+  color: #fff;
+  background-color: #F1403C;
+  position: absolute;
+  border-radius: 50px;
+  padding: 2px 3px;
+}
+.circle-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  color: #fff;
+  text-align: center;
+  line-height: 32px;
+}
+.circle-icon .iconfont {
+  font-size: 22px;
+}
+.circle-icon.blue-linear {
+  background: linear-gradient(135deg, #26aafc 0%, #0084ff 100%);
+}
+.circle-icon.yellow-linear {
+  background: linear-gradient(145deg, #ffb91a 0%, #ffab2b 100%);
+}
+.circle-icon.green-linear {
+  background: linear-gradient(140deg, #85dc50 0%, #5fc83b 100%);
+}
+.circle-icon.purple-linear {
+  background: linear-gradient(148deg, #8a78fa 0%, #715bf8 100%);
+}
+.border-bottom-gray::after {
+  position: absolute;
+  box-sizing: border-box;
+  content: ' ';
+  pointer-events: none;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid #ebedf0;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+.textOverflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
